@@ -7,6 +7,9 @@ function createSquare() {
     square.style.height=`${squareSide}px`;
     square.style.width=`${squareSide}px`;
     square.style.background='pink';
+    square.addEventListener("mouseover", function (e) {
+        e.currentTarget.style.background='blue';
+    });
     return square;
 }
 
@@ -26,6 +29,10 @@ function createGrid() {
         container.appendChild(square);
     }
     return container;
+}
+
+function onHover(e) {
+    e.style.background='blue';
 }
 
 var grid = createGrid();
