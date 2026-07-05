@@ -17,8 +17,9 @@ var addPromptButton = function(){
 };
 
 function changeNumberOfSquares() {
-    var newNumber = parseInt(prompt("specify new number of squares.  I will round this up to a square number"));
+    var newNumber = parseInt(prompt("specify new number of squares.  I will round this up to a square number, amnd limit it to 10,000"));
     console.log(`newNumber = ${newNumber}`);
+    newNumber = (newNumber > 10000)?10000 : newNumber;
     var root = Math.sqrt(newNumber);
     console.log(`root = ${root}`);
     var ceil = Math.ceil(root);
