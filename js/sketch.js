@@ -41,8 +41,18 @@ function createSquare() {
     square.style.height=`${squareSide}px`;
     square.style.width=`${squareSide}px`;
     square.style.background='pink';
+    square.style.opacity='1.0';
     square.addEventListener("mouseover", function (e) {
-        e.currentTarget.style.background='blue';
+        var randomColor = Math.floor(Math.random()*16777215).toString(16);
+        e.currentTarget.style.background=`#${randomColor}`;
+        var current_opacity = Number(e.currentTarget.style.opacity);
+        console.log(`e.currentTarget.style.opacity = ${e.currentTarget.style.opacity}`);
+        console.log(`current_opacity = ${current_opacity}`);
+        if (current_opacity > 0) {
+            current_opacity -= 0.1;
+            console.log(`ccurrent_opacity = ${current_opacity}`);
+            e.currentTarget.style.opacity = `${current_opacity}`;
+        }
     });
     return square;
 }
@@ -53,6 +63,7 @@ function createContainer() {
     container.style.flexFlow= "wrap";
     container.style.width=`${containerSide}px`;
     container.style.height=`${containerSide}px`;
+    container.style.background = 'black';
     return container;
 }
 
