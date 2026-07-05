@@ -80,7 +80,14 @@ function onHover(e) {
     e.style.background='blue';
 }
 
+function addPara(){
+    p = document.createElement("p");
+    document.body.appendChild(p);
+}
+
 addPromptButton();
+
+addPara();
 
 container = createGrid();
 
